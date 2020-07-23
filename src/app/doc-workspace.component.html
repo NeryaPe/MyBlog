@@ -1,0 +1,73 @@
+<p>Workspace Angular</p>
+<p>
+המטרה:
+פרויקטים שונים אך רכיבים ( client וגם  server) אחידים 
+טופס שעומד בפני עצמו ולא יהיה בסיכון אם וכאשר נפתח טופס נוסף באותו פרויקט
+כי אז אולי עוד שנה נעלה שוב גרסה לפרויקט.
+אך רק לא לשכפל קוד שוב ושוב והמציא את הגלגל מחדש בכול פעם.
+וכן לאפשר מהירות פיתוח ושימוש ברכיבים שכבר יצרתי כמו קלט של ת"ז מעוצב ובודק תקינות
+אז איך עושים זאת ANGULAR?
+כשיש צורך בפרויקטים שונים שחולקים רכיבים זהים
+אבל כול פרויקט עומד בפני עצמו ללא תלות כלל בפרויקט השני ניתן להשתמש ב Workspace
+<br>
+<br>
+אז איך עושים זאת ANGULAR?
+כשיש צורך בפרויקטים שונים שחולקים רכיבים זהים
+אבל כול פרויקט עומד בפני עצמו ללא תלות כלל בפרויקט השני ניתן להשתמש ב Workspace
+מימוש:
+כל פרויקט חדש שנפתח Angular נמצא כבר בתוך Workspace (כמו שכל פרויקט חדש שאנו פותחים ב Visual Studio נמצא בתוך solution)
+כדי ליצור את Workspace ללא פרויקטים פנימיים אלא רק המעטפת נשתמש בפקודה:
+<br>
+<br>
+ng new my-workspace --createApplication="false"
+<br>
+<br>
+נכנס לתוך הפרויקט:
+<br>
+<br>
+cd my-workspace
+<br>
+<br>
+לאחר מכן נוכל ליצור פרויקטים 
+<br>
+<br>
+cd my-workspace ng generate application my-first-app
+<br>
+<br>
+ועוד פרויקט :
+<br>
+<br>
+cd my-workspace ng generate application my-first-app
+<br>
+<br>
+ניצור ספריה רוחבית:
+<br>
+<br>
+ng generate library my-lib
+<br>
+<br>
+הפרויקט שנוצר:
+<br>
+<br>
+<img  src="../../assets/images/A1.png">
+<br><br>
+הספרייה my-lib  היא הספרייה שתכלול את הרכיבים הרוחביים שברצוננו לשתף בפרויקטים השונים 
+בדוגמה שלנו my-first-app ו my-second-app
+בספריה my-lib  בתוך תיקית src  ישנו קובץ TS שנקרא public-api.ts 
+קובץ זה מגדיר אילו מהשירותים שלך בספריה היהיו ציבוריים מוכרים לשימוש שאר הפרויקטים הצורכים את הספריה
+כדי להשתמש בספריה הרוחבית שייצרנו יש לבצע עליה build :
+ng build my-lib –prod
+–prod תוספת של פקודה זו חשובה לפני ביצוע ה publish  לספריה ולגישה פנימית
+ואז נוכל בפרויקטים שיצרנו לצרוך את רכיבים מהספריה רכיבים שהוגדרו ב public-api.ts
+לדוגמה בפרויקט my-first-app ב app.module.ts  נבצע import  לmy-lib 
+<br><br>
+<img  src="../../assets/images/A3.png">
+<br>
+<br>
+<img  src="../../assets/images/A2.png">
+<br><br>
+</p>
+
+<a [routerLink]="['/']" [queryParams]="{debug: true}" fragment="education">
+    חזור
+  </a>
