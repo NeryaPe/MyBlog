@@ -1,0 +1,18 @@
+[
+	{     
+		"name": "Angular Workspace",
+		"path": "1.html"
+	},
+	{
+		"name": "hi",
+		"path": "2.html"
+	},
+	{
+		"name": "not found",
+		"path": "404.html"
+	},
+	{
+		"name": "גכגכ",
+		"path": ""
+	}
+]
