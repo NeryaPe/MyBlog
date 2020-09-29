@@ -1,0 +1,13 @@
+<section id="one" class="wrapper"  >
+    <div >
+        <h2>מאמרים </h2>
+        <ul>
+            <li *ngFor="let obj of tmp_files">
+                
+                <a [routerLink]="['/article']" [queryParams]="{name: obj.path}" fragment="education">
+                    <h3>{{obj.name}} </h3>
+                 </a>
+            </li>
+         </ul>
+    </div>
+</section>
